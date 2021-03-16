@@ -18,5 +18,5 @@ console.log(randMess);
 function greetings () { //Testing grabbing user input and displaying on action
 let testing = document.getElementById("userinput").value;
 
-document.write(`Hello!!, ${testing}`);
+document.write("Hello!!, " + testing);
 };
