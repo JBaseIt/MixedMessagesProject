@@ -14,3 +14,9 @@ let messages = [
 
 let randMess = messages[Math.floor(Math.random() * messages.length)];
 console.log(randMess);
+
+function greetings () { //Testing grabbing user input and displaying on action
+const testing = document.getElementById("FirstUserInput").value;
+
+document.write(`Hello!!, ${testing}`);
+};
