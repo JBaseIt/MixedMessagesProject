@@ -18,5 +18,5 @@ console.log(randMess);
 function paragraphChange () { //Testing grabbing user input and displaying on action
 let testing = document.getElementById("userinput").value;
 
-document.getElementById("p1").innerHTML(`You have typed: ${testing}`);
+document.getElementById("p1").innerHTML = `You have typed: ${testing}`;
 };
