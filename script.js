@@ -6,6 +6,10 @@ let randAdj = adjectives[Math.floor(Math.random() * adjectives.length)];
 let randNoun = nouns[Math.floor(Math.random() * nouns.length)];
 let randVerb = verbs[Math.floor(Math.random() * verbs.length)];
 let randAdv = adverbs[Math.floor(Math.random() * adverbs.length)];
+let nounArray = []; //testing user input storage
+let adjectiveArray = [];
+let verbArray = [];
+let adverbArray = [];
 
 
 let messages = [
@@ -37,6 +41,8 @@ function listNouns () {
     let words = nouns.join(' ');
     document.getElementById("displayNouns").innerHTML = `Nouns in the pool are: ${words}`;
 }
+
+document.getElementById("displayNouns").innerHTML = `The default nouns are: ${nouns.join(' ')}`
 
 function addVerb () {
     let word = document.getElementById("verbinput").value;
