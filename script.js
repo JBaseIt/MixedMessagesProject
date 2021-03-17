@@ -33,13 +33,14 @@ function listAdj () {
 
 function addNoun () {
     let word = document.getElementById("nouninput").value;
-    nouns.push(word);
-    document.getElementById("nouninput").value = '';
+    nounArray.push(word);
+    document.getElementById("nouninput").value = ' ';
 }
 
 function listNouns () {
-    let words = nouns.join(' ');
-    document.getElementById("displayNouns").innerHTML = `Nouns in the pool are: ${words}`;
+    let allNouns = nouns.concat(nounArray)
+    let words = allNouns.join('');
+    document.getElementById("displayNouns").innerHTML = `Nouns in the pool are: ${words} \n User-submitted nouns are: ${nounArray}`;
 }
 
 document.getElementById("displayNouns").innerHTML = `The default nouns are: ${nouns.join(' ')}`
