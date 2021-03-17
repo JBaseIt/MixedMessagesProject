@@ -39,7 +39,7 @@ function addNoun () {
 
 function listNouns () {
     let allNouns = nouns.concat(nounArray)
-    let words = allNouns.join('');
+    let words = allNouns.join(', ');
     document.getElementById("displayNouns").innerHTML = `Nouns in the pool are: ${words} \n User-submitted nouns are: ${nounArray}`;
 }
 
