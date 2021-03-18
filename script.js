@@ -2,23 +2,15 @@ let adjectives = ['bewildered', 'eager', 'sparkling', 'tender'];
 let nouns = ['people', 'knowledge', 'thing', 'ball', 'field'];
 let verbs = ['run', 'deliver', 'plant', 'scrub'];
 let adverbs = ['boldly', 'safely', 'foolishly', 'occasionally'];
-let randAdj = adjectives[Math.floor(Math.random() * adjectives.length)];
-let randNoun = nouns[Math.floor(Math.random() * nouns.length)];
-let randVerb = verbs[Math.floor(Math.random() * verbs.length)];
-let randAdv = adverbs[Math.floor(Math.random() * adverbs.length)];
+function getRandAdj() {return adjectives[Math.floor(Math.random() * adjectives.length)]};
+function getRandNoun() {return nouns[Math.floor(Math.random() * nouns.length)]};
+function getRandVerb() {return verbs[Math.floor(Math.random() * verbs.length)]};
+function getRandAdv() {return adverbs[Math.floor(Math.random() * adverbs.length)]};
 let nounArray = []; //testing user input storage
 let adjectiveArray = [];
 let verbArray = [];
 let adverbArray = [];
 
-
-let messages = [
-    `This is a random sentence. It will contain a random adjective (${randAdj}), a random noun (${randNoun}), a random verb (${randVerb}), and maybe even a random adverb (${randAdv}).`,
-    `This is another test sentence. It has all the random components as well: ${randAdj}, ${randNoun}, ${randVerb}, ${randAdv}.`
-];
-
-//let randMess = messages[Math.floor(Math.random() * messages.length)];
-//console.log(randMess);
 
 function addAdj () {
     let word = document.getElementById("adjinput").value;
@@ -67,8 +59,17 @@ function listAdv () {
     document.getElementById("displayAdv").innerHTML = `Adverbs in the pool are: ${words}`;
 }
 
+const getRandMess = () => {
+    let messages = [
+        `This is a random sentence. It will contain a random adjective (${getRandAdj()}), a random noun (${getRandNoun()}), a random verb (${getRandVerb()}), and maybe even a random adverb (${getRandAdv()}).`,
+        `This is another test sentence. It has all the random components as well: ${getRandAdj()}, ${getRandNoun()}, ${getRandVerb()}, ${getRandAdv()}.`
+    ];
+    return messages[Math.floor(Math.random() * messages.length)];
+}
+
+
 function showMess () {
-    let randMess = messages[Math.floor(Math.random() * messages.length)];
+    let randMess = getRandMess();
     document.getElementById("messageHere").innerHTML = `${randMess}`
 }
 
