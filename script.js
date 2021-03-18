@@ -2,14 +2,18 @@ let adjectives = ['bewildered', 'eager', 'sparkling', 'tender'];
 let nouns = ['people', 'knowledge', 'thing', 'ball', 'field'];
 let verbs = ['run', 'deliver', 'plant', 'scrub'];
 let adverbs = ['boldly', 'safely', 'foolishly', 'occasionally'];
-function getRandAdj() {return adjectives[Math.floor(Math.random() * adjectives.length)]};
-function getRandNoun() {return nouns[Math.floor(Math.random() * nouns.length)]};
-function getRandVerb() {return verbs[Math.floor(Math.random() * verbs.length)]};
-function getRandAdv() {return adverbs[Math.floor(Math.random() * adverbs.length)]};
 let nounArray = []; //testing user input storage
 let adjectiveArray = [];
 let verbArray = [];
 let adverbArray = [];
+let allAdj = adjectives.concat(adjectiveArray);
+let allNouns = nouns.concat(nounArray);
+let allVerbs = verbs.concat(verbArray);
+let allAdverbs = adverbs.concat(adverbArray);
+function getRandAdj() {return allAdj[Math.floor(Math.random() * allAdj.length)]};
+function getRandNoun() {return allNouns[Math.floor(Math.random() * allNouns.length)]};
+function getRandVerb() {return allVerbs[Math.floor(Math.random() * allVerbs.length)]};
+function getRandAdv() {return allAdverbs[Math.floor(Math.random() * allAdverbs.length)]};
 
 
 function addAdj () {
@@ -19,7 +23,6 @@ function addAdj () {
 }
 
 function listAdj () {
-    let allAdj = adjectives.concat(adjectiveArray);
     let words = allAdj.join(' ');
     document.getElementById("displayAdj").innerHTML = `Adjectives in the pool are: ${words} <br> User-submitted adjectives are: ${adjectiveArray.join(' ')}`;
 }
@@ -33,7 +36,6 @@ function addNoun () {
 }
 
 function listNouns () {
-    let allNouns = nouns.concat(nounArray);
     let words = allNouns.join(' ');
     document.getElementById("displayNouns").innerHTML = `Nouns in the pool are: ${words} <br> User-submitted nouns are: ${nounArray.join(' ')}`;
 }
@@ -47,7 +49,6 @@ function addVerb () {
 }
 
 function listVerbs () {
-    let allVerbs = verbs.concat(verbArray);
     let words = allVerbs.join(' ');
     document.getElementById("displayVerbs").innerHTML = `Verbs in the pool are: ${words} <br> User-submitted verbs are: ${verbArray.join(' ')}`;
 }
@@ -61,7 +62,6 @@ function addAdv () {
 }
 
 function listAdv () {
-    let allAdverbs = adverbs.concat(adverbArray);
     let words = allAdverbs.join(' ');
     document.getElementById("displayAdv").innerHTML = `Adverbs in the pool are: ${words} <br> User-submitted verbs are: ${adverbArray.join(' ')}`;
 }
