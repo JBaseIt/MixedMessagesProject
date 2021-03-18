@@ -6,14 +6,6 @@ let nounArray = []; //testing user input storage
 let adjectiveArray = [];
 let verbArray = [];
 let adverbArray = [];
-let allAdj = adjectives.concat(adjectiveArray);
-let allNouns = nouns.concat(nounArray);
-let allVerbs = verbs.concat(verbArray);
-let allAdverbs = adverbs.concat(adverbArray);
-function getRandAdj() {return allAdj[Math.floor(Math.random() * allAdj.length)]};
-function getRandNoun() {return allNouns[Math.floor(Math.random() * allNouns.length)]};
-function getRandVerb() {return allVerbs[Math.floor(Math.random() * allVerbs.length)]};
-function getRandAdv() {return allAdverbs[Math.floor(Math.random() * allAdverbs.length)]};
 
 
 function addAdj () {
@@ -23,6 +15,7 @@ function addAdj () {
 }
 
 function listAdj () {
+    let allAdj = adjectives.concat(adjectiveArray);
     let words = allAdj.join(' ');
     document.getElementById("displayAdj").innerHTML = `Adjectives in the pool are: ${words} <br> User-submitted adjectives are: ${adjectiveArray.join(' ')}`;
 }
@@ -36,6 +29,7 @@ function addNoun () {
 }
 
 function listNouns () {
+    let allNouns = nouns.concat(nounArray);
     let words = allNouns.join(' ');
     document.getElementById("displayNouns").innerHTML = `Nouns in the pool are: ${words} <br> User-submitted nouns are: ${nounArray.join(' ')}`;
 }
@@ -49,6 +43,7 @@ function addVerb () {
 }
 
 function listVerbs () {
+    let allVerbs = verbs.concat(verbArray);
     let words = allVerbs.join(' ');
     document.getElementById("displayVerbs").innerHTML = `Verbs in the pool are: ${words} <br> User-submitted verbs are: ${verbArray.join(' ')}`;
 }
@@ -62,6 +57,7 @@ function addAdv () {
 }
 
 function listAdv () {
+    let allAdverbs = adverbs.concat(adverbArray);
     let words = allAdverbs.join(' ');
     document.getElementById("displayAdv").innerHTML = `Adverbs in the pool are: ${words} <br> User-submitted verbs are: ${adverbArray.join(' ')}`;
 }
@@ -69,6 +65,22 @@ function listAdv () {
 document.getElementById("displayAdv").innerHTML = `The default adverbs are: ${adverbs.join(' ')}`
 
 const getRandMess = () => {
+    let allAdj = adjectives.concat(adjectiveArray);
+    let allNouns = nouns.concat(nounArray);
+    let allVerbs = verbs.concat(verbArray);
+    let allAdverbs = adverbs.concat(adverbArray);
+    let getRandAdj = () => {
+        return allAdj[Math.floor(Math.random() * allAdj.length)]
+    }
+    let getRandNoun = () => {
+        return allNouns[Math.floor(Math.random() * allNouns.length)]
+    }
+    let getRandVerb = () => {
+        return allVerbs[Math.floor(Math.random() * allVerbs.length)]
+    }
+    let getRandAdv = () => {
+        return allAdverbs[Math.floor(Math.random() * allAdverbs.length)]
+    }
     let messages = [
         `This is a random sentence. It will contain a random adjective (${getRandAdj()}), a random noun (${getRandNoun()}), a random verb (${getRandVerb()}), and maybe even a random adverb (${getRandAdv()}).`,
         `This is another test sentence. It has all the random components as well: ${getRandAdj()}, ${getRandNoun()}, ${getRandVerb()}, ${getRandAdv()}.`
