@@ -52,7 +52,7 @@ function listVerbs () {
     document.getElementById("displayVerbs").innerHTML = `Verbs in the pool are: ${words} <br> User-submitted verbs are: ${verbArray.join(' ')}`;
 }
 
-document.getElementById("displayAdv").innerHTML = `The default adverbs are: ${adverbs.join(' ')}`
+document.getElementById("displayVerbs").innerHTML = `The default verbs are: ${verbs.join(' ')}`
 
 function addAdv () {
     let word = document.getElementById("advinput").value;
@@ -65,6 +65,8 @@ function listAdv () {
     let words = allAdverbs.join(' ');
     document.getElementById("displayAdv").innerHTML = `Adverbs in the pool are: ${words} <br> User-submitted verbs are: ${adverbArray.join(' ')}`;
 }
+
+document.getElementById("displayAdv").innerHTML = `The default adverbs are: ${adverbs.join(' ')}`
 
 const getRandMess = () => {
     let messages = [
