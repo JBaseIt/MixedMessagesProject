@@ -14,14 +14,17 @@ let adverbArray = [];
 
 function addAdj () {
     let word = document.getElementById("adjinput").value;
-    adjectives.push(word);
+    adjectiveArray.push(word);
     document.getElementById("adjinput").value = '';
 }
 
 function listAdj () {
-    let words = adjectives.join(' ');
-    document.getElementById("displayAdj").innerHTML = `Adjectives in the pool are: ${words}`;
+    let allAdj = adjectives.concat(adjectiveArray);
+    let words = allAdj.join(' ');
+    document.getElementById("displayAdj").innerHTML = `Adjectives in the pool are: ${words} <br> User-submitted adjectives are: ${adjectiveArray.join(' ')}`;
 }
+
+document.getElementById("displayAdj").innerHTML = `The default adjectives are: ${adjectives.join(' ')}`
 
 function addNoun () {
     let word = document.getElementById("nouninput").value;
@@ -30,7 +33,7 @@ function addNoun () {
 }
 
 function listNouns () {
-    let allNouns = nouns.concat(nounArray)
+    let allNouns = nouns.concat(nounArray);
     let words = allNouns.join(' ');
     document.getElementById("displayNouns").innerHTML = `Nouns in the pool are: ${words} <br> User-submitted nouns are: ${nounArray.join(' ')}`;
 }
@@ -39,24 +42,28 @@ document.getElementById("displayNouns").innerHTML = `The default nouns are: ${no
 
 function addVerb () {
     let word = document.getElementById("verbinput").value;
-    verbs.push(word);
+    verbArray.push(word);
     document.getElementById("verbinput").value = '';
 }
 
 function listVerbs () {
-    let words = verbs.join(' ');
-    document.getElementById("displayVerbs").innerHTML = `Verbs in the pool are: ${words}`;
+    let allVerbs = verbs.concat(verbArray);
+    let words = allVerbs.join(' ');
+    document.getElementById("displayVerbs").innerHTML = `Verbs in the pool are: ${words} <br> User-submitted verbs are: ${verbArray.join(' ')}`;
 }
+
+document.getElementById("displayAdv").innerHTML = `The default adverbs are: ${adverbs.join(' ')}`
 
 function addAdv () {
     let word = document.getElementById("advinput").value;
-    adverbs.push(word);
+    adverbArray.push(word);
     document.getElementById("advinput").value = '';
 }
 
 function listAdv () {
-    let words = adverbs.join(' ');
-    document.getElementById("displayAdv").innerHTML = `Adverbs in the pool are: ${words}`;
+    let allAdverbs = adverbs.concat(adverbArray);
+    let words = allAdverbs.join(' ');
+    document.getElementById("displayAdv").innerHTML = `Adverbs in the pool are: ${words} <br> User-submitted verbs are: ${adverbArray.join(' ')}`;
 }
 
 const getRandMess = () => {
